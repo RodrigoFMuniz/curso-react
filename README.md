@@ -1,3 +1,0 @@
-# Curso React
-
-## Primeiro tópico
