@@ -1,11 +1,25 @@
-# Curso React
-## Capitulo 1
-### Entendendo conceitos básicos:
+# **![react](./utils/React.png) Curso React**
+## Capitulo 1 
+### Entendendo conceitos básicos: 
 - Babel 
 > **[![Babel](./utils/babel.png)](https://babeljs.io/)**
 - Webpack
 > **[![Webpack](./utils/Webpack.png)](https://webpack.js.org/)**
 - Build
+
+- Conceito de estado em React
+
+>> ### Estado
+>> - É uma propriedade do componente onde colocamos dados que, quando mudados, devem causar uma nova renderização. Simples assim. Se deve causar mudança fica no estado, se não deve, não fica. 
+>> * *Referência*: [**Medium**](https://medium.com/@dimascyriaco_29717/entendendo-o-estado-no-react-ac1e5c32b0c0)
+
+- Conceito de *props* em React
+
+>> ### Props
+>> - são utilizadas para passar valores entre componentes. 
+>> * *Referência*: [**Medium**](https://medium.com/@dimascyriaco_29717/entendendo-o-estado-no-react-ac1e5c32b0c0)
+
+
 - Componentes de classe
 
         import { Component } from 'react/cjs/react.development';
@@ -29,3 +43,58 @@
           )
         }
         export default App
+  
+- Componentes de classe com estado
+
+        import { Component } from 'react/cjs/react.development';
+
+        class App extends Component{
+          constructor(props){
+            super(props);
+            this.handleClick = this.handleClick.bind(this)//bind(this) insere o contexto de this para dentro da função handleClick, Desta maneira permitindo o acesso da função aos objetos da classe. Para sobrepor este comportamento, use Arrow functions '()=>{}'
+            this.state = {
+              name: 'Rodrigo',
+              surname: "Muniz"
+            };
+          }
+          handleClick(){
+            //forma antiga
+            // const {name,surname} = this.state
+            // console.log(`Clicado ${name}  ${surname}`)
+
+            //Forma nova, com uso de setState
+            this.setState({name:"Rodrigo",surname:"Fernandes Muniz"})
+          }
+
+          render(){
+            const {name,surname} = this.state
+            return (
+              <h1 onClick={this.handleClick}>Hello, {name} {surname}!!!</h1>
+            )
+          }
+        }
+- Componentes de classe com estado e eventos sintéticos
+
+        import { Component } from "react/cjs/react.development";
+
+        class Counter extends Component{
+          constructor(props){
+            super(props)
+            this.state = {
+              counter : 0
+            }
+          }
+
+          addCounter = ()=>{
+            const {counter} = this.state
+            const add = counter+ 1
+            this.setState({counter: add})
+          }
+          
+          render(){
+            return (
+              <button onClick={this.addCounter}>{this.state.counter}</button>
+            )
+          }
+        }
+        export default Counter
