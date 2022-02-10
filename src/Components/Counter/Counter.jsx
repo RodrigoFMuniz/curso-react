@@ -1,22 +1,32 @@
 import { Component } from "react/cjs/react.development";
 
 class Counter extends Component{
-  constructor(props){
-    super(props)
-    this.state = {
-      counter : 0
+    state = {
+        counter : 0,
+        tituloInicial : '',
     }
-  }
 
+
+  // componentDidMount(){
+  // }
+  // componentDidUpdate(){
+  // }
+  // componentWillUnmount(){
+  // }
   addCounter = ()=>{
     const {counter} = this.state
-    const add = counter+ 1
-    this.setState({counter: add})
+    let add = counter+1
+    this.setState({counter:add})
   }
 
   render(){
+    const {counter} = this.state  
     return (
-      <button onClick={this.addCounter}>{this.state.counter}</button>
+      <div>
+        <button onClick={this.addCounter}> Clique aqui
+        </button>
+        <h1>{counter}</h1>
+      </div>
     )
   }
 }
