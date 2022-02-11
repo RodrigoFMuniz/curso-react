@@ -1,5 +1,6 @@
 import { Component } from 'react';
 import './App.css'
+import {PostCard} from '../PostCard'
 
 // Class statefull component
 class App extends Component{
@@ -33,12 +34,7 @@ class App extends Component{
     return (
      <div className='posts'>
        {posts.map((post)=>(
-         <div key={post.id} className = "post-card">
-          <img src={post.cover} alt="{post.title}" className='image'/>
-          <h1>{post.id}- {post.title}</h1>
-          <hr />
-          <p>{post.body}</p>
-         </div>
+         <PostCard post={post}/>
        ))}
      </div>
     )

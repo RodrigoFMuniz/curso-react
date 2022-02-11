@@ -227,3 +227,32 @@
         }
 
         export default App
+
+### Uso de Props
+#### Componente que recebe as props
+
+        export const PostCard = ({post})=>{
+          return (
+            <div key={post.id} className = "post-card">
+              <img src={post.cover} alt="{post.title}" className='image'/>
+              <h1>{post.id}- {post.title}</h1>
+              <hr />
+              <p>{post.body}</p>
+          </div>
+          )
+        }
+
+#### Componente que passa as props
+
+        import {PostCard} from '../PostCard'
+
+        render(){
+            const {posts} = this.state
+            return (
+            <div className='posts'>
+              {posts.map((post)=>(
+                <PostCard post={post}/>
+              ))}
+            </div>
+            )
+          }
