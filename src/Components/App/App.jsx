@@ -34,7 +34,7 @@ class App extends Component{
     return (
      <div className='posts'>
        {posts.map((post)=>(
-         <PostCard post={post}/>
+         <PostCard post={post} key={post.id}/>
        ))}
      </div>
     )
