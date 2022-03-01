@@ -242,6 +242,7 @@
           )
         }
 
+
 #### Componente que passa as props
 
         import {PostCard} from '../PostCard'
@@ -256,3 +257,5 @@
             </div>
             )
           }
+### Children 
+> Cria um bloco de código, dentro do componente principal, que será preenchido por outro componente.
