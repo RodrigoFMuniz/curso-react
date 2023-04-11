@@ -5,7 +5,8 @@ class App extends Component{
   constructor(props){
     super(props)
     this.state = {
-      name: 'Rodrigo Muniz'
+      name: 'Rodrigo Muniz',
+      counter: 0
     }
     // this.handleclick = this.handleclick.bind(this)
   }
@@ -22,12 +23,19 @@ class App extends Component{
   //   console.log(`${name} clicado`)
   // }
 
+  sumCounter = () =>{
+    const { counter } = this.state
+    this.setState({counter: counter+1})
+
+  }
+
   render(){
-    const name = this.state.name
+    const {name, counter} = this.state
     return (
       <>
-        <p onClick={this.handleclick}>{name}</p>
+        <p onClick={this.handleclick}>{name} </p>
         <p onClick={this.changeName}>{this.state.name}</p>
+        <p onClick={this.sumCounter}>Contagem : { counter }</p>
       </>
     )
   }
