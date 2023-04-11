@@ -7,16 +7,27 @@ class App extends Component{
     this.state = {
       name: 'Rodrigo Muniz'
     }
+    // this.handleclick = this.handleclick.bind(this)
   }
+  handleclick = () => {
+    const {name} = this.state
+    console.log(`${name} clicado`)
+  }
+  // handleclick(){
+  //   const {name} = this.state
+  //   console.log(`${name} clicado`)
+  // }
+
   render(){
     const name = this.state.name
     return (
       <>
-        <p>{name}</p>
+        <p onClick={this.handleclick}>{name}</p>
         <p>{this.state.name}</p>
       </>
     )
   }
+
 }
 
 
