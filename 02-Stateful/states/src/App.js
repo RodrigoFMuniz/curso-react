@@ -23,7 +23,11 @@ class App extends Component{
   //   console.log(`${name} clicado`)
   // }
 
-  sumCounter = () =>{
+  sumCounter = (event) =>{
+    console.log(event)
+    console.log(event.type)
+    console.log(event.target)
+    console.log(event.pageX)
     const { counter } = this.state
     this.setState({counter: counter+1})
 
