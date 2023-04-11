@@ -1,15 +1,16 @@
-import { Component } from 'react';
+ import { Component } from 'react';
 import './App.css';
 
 class App extends Component{
-  constructor(props){
-    super(props)
-    this.state = {
+  // constructor(props){
+  //   super(props)
+  //   this.state = {
+    state = {
       name: 'Rodrigo Muniz',
       counter: 0
     }
     // this.handleclick = this.handleclick.bind(this)
-  }
+  // }
   handleclick = () => {
     const {name} = this.state
     console.log(`${name} clicado`)
