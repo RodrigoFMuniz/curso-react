@@ -13,6 +13,10 @@ class App extends Component{
     const {name} = this.state
     console.log(`${name} clicado`)
   }
+
+  changeName = ()=>{
+    this.setState({name: 'Jéssica'})
+  }
   // handleclick(){
   //   const {name} = this.state
   //   console.log(`${name} clicado`)
@@ -23,7 +27,7 @@ class App extends Component{
     return (
       <>
         <p onClick={this.handleclick}>{name}</p>
-        <p>{this.state.name}</p>
+        <p onClick={this.changeName}>{this.state.name}</p>
       </>
     )
   }
