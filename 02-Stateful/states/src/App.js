@@ -28,6 +28,8 @@ class App extends Component{
         }
       ],
     }
+
+    timer = null
   // this.handleclick = this.handleclick.bind(this)
   // }
   // handleclick = () => {
@@ -57,12 +59,22 @@ class App extends Component{
     const { data, counter} = this.state
     
     data[0].name = 'RODRIGO'
-    setTimeout(()=>{
+    this.timer = setTimeout(()=>{
       this.setState({data, counter: counter+1})
-    }, 3000)
+    }, 1000)
   }
   componentDidMount(){
     this.handleUpdate()
+  }
+  
+  componentDidUpdate(){
+    this.handleUpdate()
+
+  }
+  
+  componentWillUnmount(){
+    clearTimeout(this.timer)
+    console.log('limpo')
   }
   render(){
     const { data, counter} = this.state
