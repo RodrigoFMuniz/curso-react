@@ -1,4 +1,4 @@
- import { Component } from 'react';
+import { Component } from 'react';
 import './App.css';
 
 class App extends Component{
@@ -6,6 +6,7 @@ class App extends Component{
   //   super(props)
   //   this.state = {
     state = {
+      counter: 0,
       data: [
         {
           id: 1,
@@ -25,7 +26,7 @@ class App extends Component{
           age: 4,
           alive: true
         }
-      ]
+      ],
     }
   // this.handleclick = this.handleclick.bind(this)
   // }
@@ -52,24 +53,23 @@ class App extends Component{
   // }
   // }
 
+  handleUpdate(){
+    const { data, counter} = this.state
+    
+    data[0].name = 'RODRIGO'
+    setTimeout(()=>{
+      this.setState({data, counter: counter+1})
+    }, 3000)
+  }
   componentDidMount(){
-    console.log('oi')
+    this.handleUpdate()
   }
   render(){
-    const {data} = this.state
+    const { data, counter} = this.state
     return (
       <div className='App'>
-        {data.map((d) => 
-          (
-            <div key={d.id}> 
-              <p >{d.name}</p> 
-              <p >{d.age}</p>
-            </div>
-          )
-        )}
-        {/* <p onClick={this.handleclick}>{name} </p>
-        <p onClick={this.changeName}>{this.state.name}</p>
-      <p onClick={this.sumCounter}>Contagem : { counter }</p> */}
+        <p>{data[0].name}</p>
+        <p>{counter}</p>
       </div>
     )
   }
