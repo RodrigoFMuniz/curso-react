@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import './App.css'
-import {Posts} from '../Posts/Posts'
+import {Posts} from '../Posts'
 import {loadPosts} from '../../utils/data/load-posts'
 
 // Class statefull component
