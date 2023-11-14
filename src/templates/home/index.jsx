@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import './Home.css'
+import './styles.css'
 import {Posts} from '../../Components/Posts'
 import {loadPosts} from '../../utils/data/load-posts'
 import { Button } from '../../Components/Button';
