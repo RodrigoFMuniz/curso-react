@@ -10,7 +10,7 @@ class App extends Component{
     posts:[],
     allPosts:[],
     page:0,
-    postsPerPage: 2
+    postsPerPage: 5
    }
 
    //Lifecycle method
@@ -30,6 +30,8 @@ class App extends Component{
     const nextPosts = allPosts.slice(nextPage, nextPage + postsPerPage)
 
     posts.push(...nextPosts)
+
+    this.setState({posts, page: nextPage})
    }
 
    //Fetching data
